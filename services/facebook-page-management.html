@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Facebook Page Management Services - Complete management of your Facebook page with regular posts, engagement, and growth strategies.">
+    <title>Facebook Page Management Services | FB Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1877F2',
+                        secondary: '#166FE5',
+                        accent: '#42B72A',
+                        dark: '#1C2E4A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #1877F2 0%, #166FE5 50%, #1C2E4A 100%); }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(24, 119, 242, 0.15); }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+    <!-- Navigation -->
+    <nav x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)" :class="scrolled ? 'bg-white shadow-lg py-4' : 'bg-white'" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <i class="fab fa-facebook-f text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-dark">FB Agency</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="../index.html#services" class="text-primary font-medium transition-colors">Services</a>
+                    <a href="../index.html#pricing" class="text-gray-600 hover:text-primary font-medium transition-colors">Pricing</a>
+                    <a href="../index.html#contact" class="bg-accent hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">Get Started</a>
+                </div>
+                <button @click="mobileOpen = !mobileOpen" class="md:hidden p-2">
+                    <i :class="mobileOpen ? 'fa-times' : 'fa-bars'" class="fas text-2xl text-dark"></i>
+                </button>
+            </div>
+            <div x-show="mobileOpen" x-transition class="md:hidden mt-4 bg-white rounded-2xl shadow-xl p-6">
+                <div class="flex flex-col space-y-4">
+                    <a href="../index.html" class="text-gray-600 hover:text-primary font-medium py-2">Home</a>
+                    <a href="../index.html#services" class="text-primary font-medium py-2">Services</a>
+                    <a href="../index.html#pricing" class="text-gray-600 hover:text-primary font-medium py-2">Pricing</a>
+                    <a href="../index.html#contact" class="bg-accent text-white px-6 py-3 rounded-full font-semibold text-center">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white">
+                <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <i class="fab fa-facebook-f mr-2"></i>
+                    <span class="font-medium">Service Details</span>
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-extrabold mb-6">Facebook Page Management</h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto mb-8">
+                    Complete management of your Facebook page with regular posts, engagement, and proven growth strategies.
+                </p>
+                <a href="../index.html#contact" class="inline-flex items-center bg-accent hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Get Started Today
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none"><path d="M0 120L1440 120L1440 60C1200 100 960 20 720 60C480 100 240 20 0 60L0 120Z" fill="white"/></svg>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center bg-primary/10 rounded-full px-4 py-2 mb-6">
+                        <i class="fab fa-facebook text-primary mr-2"></i>
+                        <span class="text-primary font-medium">Our Service</span>
+                    </div>
+                    <h2 class="text-4xl font-extrabold text-dark mb-6">Professional Page Management</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Your Facebook page is your digital storefront. We ensure it always looks professional, engages your audience, and attracts new followers. Our team handles everything so you can focus on your business.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Daily posting with high-quality content</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Community engagement and response management</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Profile optimization and cover design</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Regular audience growth campaigns</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Monthly performance reports</span></li>
+                    </ul>
+                    <a href="../index.html#contact" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg">
+                        Request Consultation <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="bg-gradient-to-br from-primary to-secondary rounded-3xl p-8 text-white">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop" alt="Facebook Page Management" class="rounded-2xl w-full mb-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4">What You Get</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">30+</p><p class="text-sm opacity-80">Posts/Month</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">100%</p><p class="text-sm opacity-80">Response Rate</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">Daily</p><p class="text-sm opacity-80">Content</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">24/7</p><p class="text-sm opacity-80">Monitoring</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-dark mb-6">What's Included</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to maintain a professional and engaging Facebook presence.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-pen-fancy text-2xl text-primary"></i></div><h3 class="text-xl font-bold text-dark mb-3">Content Creation</h3><p class="text-gray-600">Engaging posts, stories, and updates tailored to your audience and brand voice.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-comments text-2xl text-accent"></i></div><h3 class="text-xl font-bold text-dark mb-3">Community Management</h3><p class="text-gray-600">Respond to comments, messages, and reviews to build customer relationships.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-bullhorn text-2xl text-purple-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Growth Strategy</h3><p class="text-gray-600">Organic growth tactics and targeted campaigns to expand your follower base.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-image text-2xl text-yellow-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Visual Design</h3><p class="text-gray-600">Custom cover photos, profile images, and branded visual content.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-chart-line text-2xl text-red-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Analytics & Reports</h3><p class="text-gray-600">Detailed insights into page performance, engagement, and audience demographics.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-shield-alt text-2xl text-cyan-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Reputation Management</h3><p class="text-gray-600">Monitor and manage your brand's online reputation and customer sentiment.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-dark mb-6">Service Pricing</h2>
+                <p class="text-xl text-gray-600">Choose the package that fits your needs</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-primary/20 transition-all duration-300">
+                    <div class="text-center mb-6"><div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-seedling text-3xl text-blue-600"></i></div><h3 class="text-2xl font-bold text-dark">Basic</h3><p class="text-gray-500">15 posts/month</p></div>
+                    <div class="text-center mb-6"><span class="text-4xl font-extrabold text-dark">$99</span><span class="text-gray-500">/month</span></div>
+                    <ul class="space-y-3 mb-8"><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span class="text-gray-600">15 posts per month</span></li><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span class="text-gray-600">Comment responses</span></li><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span class="text-gray-600">Basic analytics</span></li><li class="flex items-center text-gray-400"><i class="fas fa-times mr-3"></i><span>Story management</span></li></ul>
+                    <a href="../index.html#contact" class="block text-center bg-gray-100 hover:bg-gray-200 text-dark px-6 py-4 rounded-full font-semibold transition-all duration-300">Get Started</a>
+                </div>
+                <div class="bg-primary rounded-2xl p-8 relative transform lg:scale-105 shadow-2xl">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2"><span class="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold">Most Popular</span></div>
+                    <div class="text-center mb-6 text-white"><div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-bolt text-3xl"></i></div><h3 class="text-2xl font-bold">Standard</h3><p class="text-white/80">30 posts/month</p></div>
+                    <div class="text-center mb-6 text-white"><span class="text-4xl font-extrabold">$199</span><span class="text-white/80">/month</span></div>
+                    <ul class="space-y-3 mb-8 text-white"><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span>30 posts per month</span></li><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span>Full message management</span></li><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span>Weekly analytics reports</span></li><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span>Story management</span></li></ul>
+                    <a href="../index.html#contact" class="block text-center bg-white text-primary px-6 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg">Get Started</a>
+                </div>
+                <div class="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-primary/20 transition-all duration-300">
+                    <div class="text-center mb-6"><div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-crown text-3xl text-yellow-600"></i></div><h3 class="text-2xl font-bold text-dark">Premium</h3><p class="text-gray-500">Daily posts</p></div>
+                    <div class="text-center mb-6"><span class="text-4xl font-extrabold text-dark">$399</span><span class="text-gray-500">/month</span></div>
+                    <ul class="space-y-3 mb-8"><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span class="text-gray-600">Daily posts</span></li><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span class="text-gray-600">Full engagement management</span></li><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span class="text-gray-600">Daily analytics</span></li><li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i><span class="text-gray-600">Priority support</span></li></ul>
+                    <a href="../index.html#contact" class="block text-center bg-gray-800 hover:bg-gray-900 text-white px-6 py-4 rounded-full font-semibold transition-all duration-300">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-4xl lg:text-5xl font-extrabold mb-6">Ready to Level Up Your Page?</h2>
+            <p class="text-xl text-white/90 mb-10">Let us handle your Facebook page management while you focus on growing your business.</p>
+            <a href="../index.html#contact" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 shadow-2xl"><i class="fab fa-whatsapp mr-3 text-2xl"></i>Contact on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fab fa-facebook-f text-white"></i></div><span class="text-xl font-bold">FB Agency</span></div>
+                <div class="flex space-x-6"><a href="../index.html" class="text-gray-400 hover:text-white">Home</a><a href="../index.html#services" class="text-gray-400 hover:text-white">Services</a><a href="../index.html#pricing" class="text-gray-400 hover:text-white">Pricing</a><a href="../index.html#contact" class="text-gray-400 hover:text-white">Contact</a></div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center"><p class="text-gray-400 text-sm">© 2024 FB Agency. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <button x-data="{ visible: false }" @scroll.window="visible = (window.pageYOffset > 500)" x-show="visible" x-transition @click="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-8 right-8 w-12 h-12 bg-primary hover:bg-secondary text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-50"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>

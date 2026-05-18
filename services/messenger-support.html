@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Messenger Support Services - 24/7 customer support through Facebook Messenger for your business.">
+    <title>Messenger Support Services | FB Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#1877F2', secondary: '#166FE5', accent: '#42B72A', dark: '#1C2E4A' }}}}</script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'); * { scroll-behavior: smooth; } .gradient-bg { background: linear-gradient(135deg, #1877F2 0%, #166FE5 50%, #1C2E4A 100%); } .hover-lift { transition: all 0.3s ease; } .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(24, 119, 242, 0.15); }</style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+    <nav x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white" :class="scrolled ? 'shadow-lg py-4' : ''">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="flex items-center space-x-2"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fab fa-facebook-f text-white text-xl"></i></div><span class="text-xl font-bold text-dark">FB Agency</span></a>
+                <div class="hidden md:flex items-center space-x-8"><a href="../index.html" class="text-gray-600 hover:text-primary font-medium">Home</a><a href="../index.html#services" class="text-primary font-medium">Services</a><a href="../index.html#pricing" class="text-gray-600 hover:text-primary font-medium">Pricing</a><a href="../index.html#contact" class="bg-accent hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg">Get Started</a></div>
+                <button @click="mobileOpen = !mobileOpen" class="md:hidden"><i class="fas text-2xl text-dark" :class="mobileOpen ? 'fa-times' : 'fa-bars'"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="gradient-bg pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
+            <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6"><i class="fab fa-facebook-messenger mr-2"></i><span class="font-medium">Service Details</span></div>
+            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6">Messenger Support</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto mb-8">24/7 customer support through Facebook Messenger for your business.</p>
+            <a href="../index.html#contact" class="inline-flex items-center bg-accent hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl"><i class="fas fa-headset mr-2"></i>Get Support</a>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 120" fill="none"><path d="M0 120L1440 120L1440 60C1200 100 960 20 720 60C480 100 240 20 0 60L0 120Z" fill="white"/></svg></div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center bg-indigo-100 rounded-full px-4 py-2 mb-6"><i class="fab fa-facebook-messenger text-indigo-600 mr-2"></i><span class="text-indigo-600 font-medium">Our Service</span></div>
+                    <h2 class="text-4xl font-extrabold text-dark mb-6">Always There For Your Customers</h2>
+                    <p class="text-lg text-gray-600 mb-8">Fast, professional Messenger responses build trust and convert leads. We handle all customer inquiries so you never miss an opportunity.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">24/7 response management</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Quick response times</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">FAQ automation</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Lead qualification</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Customer satisfaction tracking</span></li>
+                    </ul>
+                    <a href="../index.html#contact" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-semibold shadow-lg">Get Started <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-8 text-white">
+                    <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=600&h=400&fit=crop" alt="Messenger Support" class="rounded-2xl w-full mb-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4">Support Stats</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">5min</p><p class="text-sm opacity-80">Avg Response</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">98%</p><p class="text-sm opacity-80">Satisfaction</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">24/7</p><p class="text-sm opacity-80">Coverage</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">100%</p><p class="text-sm opacity-80">Responses</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16"><h2 class="text-4xl font-extrabold text-dark mb-6">What's Included</h2><p class="text-xl text-gray-600">Complete Messenger support solutions</p></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-bolt text-2xl text-primary"></i></div><h3 class="text-xl font-bold text-dark mb-3">Quick Responses</h3><p class="text-gray-600">Instant acknowledgment and quick resolution of customer queries.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-robot text-2xl text-accent"></i></div><h3 class="text-xl font-bold text-dark mb-3">Smart Bots</h3><p class="text-gray-600">AI-powered chatbots for instant responses to common questions.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-user-friends text-2xl text-purple-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Live Transfers</h3><p class="text-gray-600">Seamless handoff to human agents for complex issues.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-clipboard-list text-2xl text-yellow-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Lead Capture</h3><p class="text-gray-600">Qualify and capture leads directly through Messenger.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-chart-pie text-2xl text-red-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Analytics</h3><p class="text-gray-600">Track response times, satisfaction, and conversation metrics.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-tags text-2xl text-cyan-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Custom Flows</h3><p class="text-gray-600">Tailored conversation flows for your specific needs.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-4xl lg:text-5xl font-extrabold mb-6">Never Miss a Message</h2>
+            <p class="text-xl text-white/90 mb-10">Provide exceptional customer support that converts.</p>
+            <a href="../index.html#contact" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full font-bold text-xl shadow-2xl"><i class="fab fa-whatsapp mr-3 text-2xl"></i>Contact on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fab fa-facebook-f text-white"></i></div><span class="text-xl font-bold">FB Agency</span></div>
+                <div class="flex space-x-6"><a href="../index.html" class="text-gray-400 hover:text-white">Home</a><a href="../index.html#services" class="text-gray-400 hover:text-white">Services</a><a href="../index.html#pricing" class="text-gray-400 hover:text-white">Pricing</a></div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center"><p class="text-gray-400 text-sm">© 2024 FB Agency. All rights reserved.</p></div>
+        </div>
+    </footer>
+</body>
+</html>

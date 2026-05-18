@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Branding Services - Complete branding solutions including logo design and brand guidelines for Facebook marketing.">
+    <title>Branding Services | FB Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#1877F2', secondary: '#166FE5', accent: '#42B72A', dark: '#1C2E4A' }}}}</script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'); * { scroll-behavior: smooth; } .gradient-bg { background: linear-gradient(135deg, #1877F2 0%, #166FE5 50%, #1C2E4A 100%); } .hover-lift { transition: all 0.3s ease; } .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(24, 119, 242, 0.15); }</style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+    <nav x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white" :class="scrolled ? 'shadow-lg py-4' : ''">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="flex items-center space-x-2"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fab fa-facebook-f text-white text-xl"></i></div><span class="text-xl font-bold text-dark">FB Agency</span></a>
+                <div class="hidden md:flex items-center space-x-8"><a href="../index.html" class="text-gray-600 hover:text-primary font-medium">Home</a><a href="../index.html#services" class="text-primary font-medium">Services</a><a href="../index.html#pricing" class="text-gray-600 hover:text-primary font-medium">Pricing</a><a href="../index.html#contact" class="bg-accent hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg">Get Started</a></div>
+                <button @click="mobileOpen = !mobileOpen" class="md:hidden"><i class="fas text-2xl text-dark" :class="mobileOpen ? 'fa-times' : 'fa-bars'"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="gradient-bg pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
+            <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6"><i class="fas fa-gem mr-2"></i><span class="font-medium">Service Details</span></div>
+            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6">Branding Services</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto mb-8">Complete branding solutions including logo design and brand guidelines that make your business unforgettable.</p>
+            <a href="../index.html#contact" class="inline-flex items-center bg-accent hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl"><i class="fas fa-palette mr-2"></i>Build Your Brand</a>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 120" fill="none"><path d="M0 120L1440 120L1440 60C1200 100 960 20 720 60C480 100 240 20 0 60L0 120Z" fill="white"/></svg></div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center bg-teal-100 rounded-full px-4 py-2 mb-6"><i class="fas fa-gem text-teal-600 mr-2"></i><span class="text-teal-600 font-medium">Our Service</span></div>
+                    <h2 class="text-4xl font-extrabold text-dark mb-6">Stand Out From The Crowd</h2>
+                    <p class="text-lg text-gray-600 mb-8">Your brand is more than a logo – it's the entire experience. We create cohesive brand identities that resonate with your audience and build lasting impressions.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Logo design</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Brand guidelines</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Color palette</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Typography selection</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Social media templates</span></li>
+                    </ul>
+                    <a href="../index.html#contact" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-semibold shadow-lg">Get Started <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                <div class="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-3xl p-8 text-white">
+                    <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop" alt="Branding" class="rounded-2xl w-full mb-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4">Brand Deliverables</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">3</p><p class="text-sm opacity-80">Logo Concepts</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">Full</p><p class="text-sm opacity-80">Guidelines</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">20+</p><p class="text-sm opacity-80">Templates</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">SVG</p><p class="text-sm opacity-80">Source Files</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16"><h2 class="text-4xl font-extrabold text-dark mb-6">What's Included</h2><p class="text-xl text-gray-600">Complete branding packages</p></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-pen-nib text-2xl text-primary"></i></div><h3 class="text-xl font-bold text-dark mb-3">Logo Design</h3><p class="text-gray-600">Professional logo concepts with multiple revisions.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-book text-2xl text-accent"></i></div><h3 class="text-xl font-bold text-dark mb-3">Brand Guidelines</h3><p class="text-gray-600">Complete style guide for consistent branding.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-palette text-2xl text-purple-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Color Palette</h3><p class="text-gray-600">Custom color codes for all media.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-font text-2xl text-yellow-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Typography</h3><p class="text-gray-600">Selected font families and usage guidelines.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-layer-group text-2xl text-red-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Templates</h3><p class="text-gray-600">Ready-to-use social media post templates.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-file-code text-2xl text-cyan-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Source Files</h3><p class="text-gray-600">All files in multiple formats for any use.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-4xl lg:text-5xl font-extrabold mb-6">Build a memorable Brand</h2>
+            <p class="text-xl text-white/90 mb-10">Get professional branding that sets you apart.</p>
+            <a href="../index.html#contact" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full font-bold text-xl shadow-2xl"><i class="fab fa-whatsapp mr-3 text-2xl"></i>Contact on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fab fa-facebook-f text-white"></i></div><span class="text-xl font-bold">FB Agency</span></div>
+                <div class="flex space-x-6"><a href="../index.html" class="text-gray-400 hover:text-white">Home</a><a href="../index.html#services" class="text-gray-400 hover:text-white">Services</a><a href="../index.html#pricing" class="text-gray-400 hover:text-white">Pricing</a></div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center"><p class="text-gray-400 text-sm">© 2024 FB Agency. All rights reserved.</p></div>
+        </div>
+    </footer>
+</body>
+</html>

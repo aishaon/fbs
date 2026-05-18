@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organic Growth Strategy Services - Build a strong organic presence with proven growth techniques.">
+    <title>Organic Growth Strategy | FB Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#1877F2', secondary: '#166FE5', accent: '#42B72A', dark: '#1C2E4A' }}}}</script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap'); * { scroll-behavior: smooth; } .gradient-bg { background: linear-gradient(135deg, #1877F2 0%, #166FE5 50%, #1C2E4A 100%); } .hover-lift { transition: all 0.3s ease; } .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(24, 119, 242, 0.15); }</style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+    <nav x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white" :class="scrolled ? 'shadow-lg py-4' : ''">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="flex items-center space-x-2"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fab fa-facebook-f text-white text-xl"></i></div><span class="text-xl font-bold text-dark">FB Agency</span></a>
+                <div class="hidden md:flex items-center space-x-8"><a href="../index.html" class="text-gray-600 hover:text-primary font-medium">Home</a><a href="../index.html#services" class="text-primary font-medium">Services</a><a href="../index.html#pricing" class="text-gray-600 hover:text-primary font-medium">Pricing</a><a href="../index.html#contact" class="bg-accent hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg">Get Started</a></div>
+                <button @click="mobileOpen = !mobileOpen" class="md:hidden"><i class="fas text-2xl text-dark" :class="mobileOpen ? 'fa-times' : 'fa-bars'"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="gradient-bg pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
+            <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6"><i class="fas fa-chart-bar mr-2"></i><span class="font-medium">Service Details</span></div>
+            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6">Organic Growth Strategy</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto mb-8">Build a strong organic presence with proven growth techniques that attract and retain followers.</p>
+            <a href="../index.html#contact" class="inline-flex items-center bg-accent hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl"><i class="fas fa-chart-line mr-2"></i>Grow Organically</a>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 120" fill="none"><path d="M0 120L1440 120L1440 60C1200 100 960 20 720 60C480 100 240 20 0 60L0 120Z" fill="white"/></svg></div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center bg-cyan-100 rounded-full px-4 py-2 mb-6"><i class="fas fa-chart-bar text-cyan-600 mr-2"></i><span class="text-cyan-600 font-medium">Our Service</span></div>
+                    <h2 class="text-4xl font-extrabold text-dark mb-6">Sustainable Growth</h2>
+                    <p class="text-lg text-gray-600 mb-8">Organic growth is about building genuine connections with your audience. We use proven strategies to attract real followers who engage with your content.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Community building strategies</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Content strategy development</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Engagement optimization</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Hashtag research and usage</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span class="text-gray-600">Timing and frequency optimization</span></li>
+                    </ul>
+                    <a href="../index.html#contact" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-semibold shadow-lg">Start Growing <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl p-8 text-white">
+                    <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=400&fit=crop" alt="Organic Growth" class="rounded-2xl w-full mb-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4">Growth Results</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">500%</p><p class="text-sm opacity-80">Avg Growth</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">10K+</p><p class="text-sm opacity-80">New Followers</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">25%</p><p class="text-sm opacity-80">Engagement</p></div>
+                        <div class="bg-white/10 rounded-xl p-4 text-center"><p class="font-bold text-3xl">Real</p><p class="text-sm opacity-80">Followers</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16"><h2 class="text-4xl font-extrabold text-dark mb-6">Growth Strategies</h2><p class="text-xl text-gray-600">Proven techniques for sustainable growth</p></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-users text-2xl text-primary"></i></div><h3 class="text-xl font-bold text-dark mb-3">Community Building</h3><p class="text-gray-600">Create a loyal community that advocates for your brand.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-hashtag text-2xl text-accent"></i></div><h3 class="text-xl font-bold text-dark mb-3">Hashtag Strategy</h3><p class="text-gray-600">Research and implement effective hashtag campaigns.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-handshake text-2xl text-purple-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Cross-Promotion</h3><p class="text-gray-600">Partner with complementary pages for mutual growth.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-clock text-2xl text-yellow-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Optimal Timing</h3><p class="text-gray-600">Post when your audience is most active.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-heart text-2xl text-red-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Engagement Rings</h3><p class="text-gray-600">Active engagement with followers and similar accounts.</p></div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift"><div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6"><i class="fas fa-gem text-2xl text-cyan-600"></i></div><h3 class="text-xl font-bold text-dark mb-3">Content Quality</h3><p class="text-gray-600">Consistent high-quality content that attracts followers.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-4xl lg:text-5xl font-extrabold mb-6">Ready to Grow Real Followers?</h2>
+            <p class="text-xl text-white/90 mb-10">Build an engaged community that supports your business.</p>
+            <a href="../index.html#contact" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full font-bold text-xl shadow-2xl"><i class="fab fa-whatsapp mr-3 text-2xl"></i>Contact on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fab fa-facebook-f text-white"></i></div><span class="text-xl font-bold">FB Agency</span></div>
+                <div class="flex space-x-6"><a href="../index.html" class="text-gray-400 hover:text-white">Home</a><a href="../index.html#services" class="text-gray-400 hover:text-white">Services</a><a href="../index.html#pricing" class="text-gray-400 hover:text-white">Pricing</a></div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center"><p class="text-gray-400 text-sm">© 2024 FB Agency. All rights reserved.</p></div>
+        </div>
+    </footer>
+</body>
+</html>

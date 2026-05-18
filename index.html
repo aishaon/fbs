@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grow Your Business with Powerful Facebook Marketing - Results-driven agency helping businesses increase sales, leads, and brand awareness">
+    <title>Facebook Marketing Agency | Digital Growth Experts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1877F2',
+                        secondary: '#166FE5',
+                        accent: '#42B72A',
+                        dark: '#1C2E4A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1877F2 0%, #166FE5 50%, #1C2E4A 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1877F2, #42B72A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(24, 119, 242, 0.15);
+        }
+
+        .counter-num {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial-slide {
+            transition: all 0.5s ease;
+        }
+
+        .step-card {
+            position: relative;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #1877F2, transparent);
+        }
+
+        .step-card:last-child::before {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .step-card::before {
+                display: none;
+            }
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            left: -50px;
+        }
+
+        .blob-3 {
+            width: 200px;
+            height: 200px;
+            top: 40%;
+            right: 10%;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+    <!-- Navigation -->
+    <nav x-data="{ mobileOpen: false, scrolled: false }"
+         @scroll.window="scrolled = (window.pageYOffset > 50)"
+         :class="scrolled ? 'bg-white shadow-lg py-4' : 'bg-transparent py-6'"
+         class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <i class="fab fa-facebook-f text-white text-xl"></i>
+                    </div>
+                    <span :class="scrolled ? 'text-dark' : 'text-white'" class="text-xl font-bold">FB Agency</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" :class="scrolled ? 'text-gray-600 hover:text-primary' : 'text-white/90 hover:text-white'" class="font-medium transition-colors">Services</a>
+                    <a href="#about" :class="scrolled ? 'text-gray-600 hover:text-primary' : 'text-white/90 hover:text-white'" class="font-medium transition-colors">About</a>
+                    <a href="#portfolio" :class="scrolled ? 'text-gray-600 hover:text-primary' : 'text-white/90 hover:text-white'" class="font-medium transition-colors">Results</a>
+                    <a href="#pricing" :class="scrolled ? 'text-gray-600 hover:text-primary' : 'text-white/90 hover:text-white'" class="font-medium transition-colors">Pricing</a>
+                    <a href="#contact" :class="scrolled ? 'text-gray-600 hover:text-primary' : 'text-white/90 hover:text-white'" class="font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-accent hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button @click="mobileOpen = !mobileOpen" class="md:hidden p-2">
+                    <i :class="mobileOpen ? 'fa-times' : 'fa-bars'" class="fas text-2xl" :class="scrolled ? 'text-dark' : 'text-white'"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="mobileOpen"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 transform -translate-y-4"
+                 x-transition:enter-end="opacity-100 transform translate-y-0"
+                 class="md:hidden mt-4 bg-white rounded-2xl shadow-xl p-6">
+                <div class="flex flex-col space-y-4">
+                    <a href="#services" class="text-gray-600 hover:text-primary font-medium py-2">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium py-2">About</a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-primary font-medium py-2">Results</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary font-medium py-2">Pricing</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary font-medium py-2">Contact</a>
+                    <a href="#contact" class="bg-accent text-white px-6 py-3 rounded-full font-semibold text-center">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen relative overflow-hidden flex items-center">
+        <!-- Floating Shapes -->
+        <div class="floating-shape blob-1 bg-white"></div>
+        <div class="floating-shape blob-2 bg-accent" style="animation-delay: 2s;"></div>
+        <div class="floating-shape blob-3 bg-yellow-400" style="animation-delay: 4s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <i class="fas fa-star text-yellow-400 mr-2"></i>
+                        <span class="text-sm font-medium">Trusted by 300+ Businesses</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                        Grow Your Business with
+                        <span class="text-yellow-300">Powerful Facebook</span>
+                        Marketing
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
+                        We help you increase sales, leads, and brand awareness using advanced
+                        Facebook Ads, Content & Growth Strategy.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-accent hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Get Started
+                        </a>
+                        <a href="#services" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 border border-white/30 flex items-center justify-center">
+                            <i class="fas fa-eye mr-2"></i>
+                            View Services
+                        </a>
+                    </div>
+
+                    <div class="mt-12 flex items-center gap-8">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-yellow-400 border-2 border-white flex items-center justify-center text-sm font-bold">A</div>
+                            <div class="w-10 h-10 rounded-full bg-pink-400 border-2 border-white flex items-center justify-center text-sm font-bold">B</div>
+                            <div class="w-10 h-10 rounded-full bg-purple-400 border-2 border-white flex items-center justify-center text-sm font-bold">C</div>
+                            <div class="w-10 h-10 rounded-full bg-blue-400 border-2 border-white flex items-center justify-center text-sm font-bold">+</div>
+                        </div>
+                        <p class="text-white/80 text-sm">Join 300+ happy clients</p>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block relative">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+                        <div class="bg-white rounded-2xl p-6 shadow-2xl">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                        <i class="fab fa-facebook-f text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-800">Ad Campaign</p>
+                                        <p class="text-sm text-gray-500">Active</p>
+                                    </div>
+                                </div>
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">Live</span>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                <div class="text-center p-4 bg-blue-50 rounded-xl">
+                                    <p class="text-2xl font-bold text-primary counter-num" x-data="{ count: 0 }" x-init="
+                                        let start = 0;
+                                        let end = 125000;
+                                        let duration = 2000;
+                                        let step = end / (duration / 16);
+                                        let timer = setInterval(() => {
+                                            start += step;
+                                            if (start >= end) {
+                                                count = end;
+                                                clearInterval(timer);
+                                            } else {
+                                                count = Math.floor(start);
+                                            }
+                                        }, 16);
+                                    " x-text="count.toLocaleString()">125,000</p>
+                                    <p class="text-sm text-gray-600">Reach</p>
+                                </div>
+                                <div class="text-center p-4 bg-green-50 rounded-xl">
+                                    <p class="text-2xl font-bold text-accent counter-num" x-data="{ count: 0 }" x-init="
+                                        let start = 0;
+                                        let end = 3500;
+                                        let duration = 2000;
+                                        let step = end / (duration / 16);
+                                        let timer = setInterval(() => {
+                                            start += step;
+                                            if (start >= end) {
+                                                count = end;
+                                                clearInterval(timer);
+                                            } else {
+                                                count = Math.floor(start);
+                                            }
+                                        }, 16);
+                                    " x-text="count.toLocaleString()">3,500</p>
+                                    <p class="text-sm text-gray-600">Engagements</p>
+                                </div>
+                                <div class="text-center p-4 bg-purple-50 rounded-xl">
+                                    <p class="text-2xl font-bold text-purple-600">5.2%</p>
+                                    <p class="text-sm text-gray-600">CTR</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-100 rounded-xl p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-gray-600">Budget Spent</span>
+                                    <span class="text-sm font-bold text-gray-800">$750 / $1,000</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L1440 120L1440 60C1200 100 960 20 720 60C480 100 240 20 0 60L0 120Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-white" x-data="{
+        stats: [
+            { value: 500, suffix: '+', label: 'Projects Completed', icon: 'fa-briefcase' },
+            { value: 300, suffix: '+', label: 'Happy Clients', icon: 'fa-smile' },
+            { value: 10, suffix: 'M+', label: 'Reach Generated', icon: 'fa-users' },
+            { value: 24, suffix: '/7', label: 'Support', icon: 'fa-headset' }
+        ],
+        counts: [0, 0, 0, 0],
+        started: false,
+        startCount() {
+            if (this.started) return;
+            this.started = true;
+            this.stats.forEach((stat, i) => {
+                let duration = 2000;
+                let steps = 60;
+                let increment = stat.value / steps;
+                let current = 0;
+                let timer = setInterval(() => {
+                    current += increment;
+                    if (current >= stat.value) {
+                        this.counts[i] = stat.value;
+                        clearInterval(timer);
+                    } else {
+                        this.counts[i] = Math.floor(current);
+                    }
+                }, duration / steps);
+            });
+        }
+    }" x-init="
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCount();
+                }
+            });
+        });
+        observer.observe($el);
+    ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <template x-for="(stat, index) in stats" :key="index">
+                    <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-primary hover:text-white transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-primary/10 group-hover:bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i :class="'fas ' + stat.icon" class="text-3xl text-primary group-hover:text-white"></i>
+                        </div>
+                        <p class="text-4xl lg:text-5xl font-extrabold mb-2">
+                            <span x-text="counts[index]"></span><span x-text="stat.suffix"></span>
+                        </p>
+                        <p class="text-gray-600 group-hover:text-white/90 font-medium" x-text="stat.label"></p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-primary to-secondary rounded-3xl p-8 lg:p-12">
+                        <div class="bg-white rounded-2xl p-6 shadow-2xl">
+                            <div class="aspect-video bg-gray-200 rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Team collaboration" class="w-full h-full object-cover rounded-xl">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-blue-50 rounded-xl p-4 text-center">
+                                    <p class="text-3xl font-bold text-primary">8+</p>
+                                    <p class="text-sm text-gray-600">Years Experience</p>
+                                </div>
+                                <div class="bg-green-50 rounded-xl p-4 text-center">
+                                    <p class="text-3xl font-bold text-accent">98%</p>
+                                    <p class="text-sm text-gray-600">Success Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-2xl flex items-center justify-center shadow-xl">
+                        <i class="fas fa-award text-white text-4xl"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="inline-flex items-center bg-primary/10 rounded-full px-4 py-2 mb-6">
+                        <i class="fas fa-info-circle text-primary mr-2"></i>
+                        <span class="text-primary font-medium">About Us</span>
+                    </div>
+
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-dark mb-6">Who We Are</h2>
+
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        We are a results-driven Facebook Marketing Agency helping businesses grow with ads,
+                        content, and strategic marketing. Our team of experts combines creativity with data
+                        to deliver campaigns that convert.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Data-Driven Strategy</h4>
+                                <p class="text-gray-600">Every decision backed by analytics and insights</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-palette text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Creative Content</h4>
+                                <p class="text-gray-600">Engaging visuals that capture attention</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-dollar-sign text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">High ROI Campaigns</h4>
+                                <p class="text-gray-600">Maximize your return on investment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Learn More About Us
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/10 rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-cogs text-primary mr-2"></i>
+                    <span class="text-primary font-medium">Our Services</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-dark mb-6">What We Offer</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive Facebook marketing solutions to help your business grow and succeed online
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fab fa-facebook text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Facebook Page Management</h3>
+                    <p class="text-gray-600 mb-6">Complete management of your Facebook page with regular posts, engagement, and growth strategies.</p>
+                    <a href="services/facebook-page-management.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bullhorn text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Facebook Ads & Boosting</h3>
+                    <p class="text-gray-600 mb-6">Strategic ad campaigns that reach your target audience and drive real results.</p>
+                    <a href="services/facebook-ads-boosting.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Graphic Design Services</h3>
+                    <p class="text-gray-600 mb-6">Stunning visuals and graphics that make your brand stand out on social media.</p>
+                    <a href="services/graphic-design.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Reels & Video Editing</h3>
+                    <p class="text-gray-600 mb-6">Engaging video content including Reels, stories, and promotional videos.</p>
+                    <a href="services/reels-video-editing.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-pen-fancy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Content Writing</h3>
+                    <p class="text-gray-600 mb-6">Compelling copy that engages your audience and drives action.</p>
+                    <a href="services/content-writing.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-bar text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Organic Growth Strategy</h3>
+                    <p class="text-gray-600 mb-6">Build a strong organic presence with proven growth techniques.</p>
+                    <a href="services/organic-growth.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fab fa-facebook-messenger text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Messenger Support</h3>
+                    <p class="text-gray-600 mb-6">24/7 customer support through Facebook Messenger for your business.</p>
+                    <a href="services/messenger-support.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Facebook Shop Setup</h3>
+                    <p class="text-gray-600 mb-6">Set up and optimize your Facebook Shop for maximum sales.</p>
+                    <a href="services/facebook-shop.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-pie text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Analytics & Reporting</h3>
+                    <p class="text-gray-600 mb-6">Detailed reports and insights to track your campaign performance.</p>
+                    <a href="services/analytics-reporting.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl cursor-pointer md:col-span-2 lg:col-span-1">
+                    <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-gem text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Branding Services</h3>
+                    <p class="text-gray-600 mb-6">Complete branding solutions including logo design and brand guidelines.</p>
+                    <a href="services/branding.html" class="text-primary font-semibold inline-flex items-center hover:text-secondary transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gradient-to-br from-dark to-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-star text-yellow-400 mr-2"></i>
+                    <span class="font-medium">Our Advantages</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-extrabold mb-6">Why Choose Us</h2>
+                <p class="text-xl text-white/80 max-w-2xl mx-auto">
+                    We deliver exceptional results with our proven strategies and dedicated team
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 hover-lift">
+                    <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-4xl text-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">High ROI Strategy</h3>
+                    <p class="text-white/80">Maximize your return with data-driven campaigns that deliver measurable results.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 hover-lift">
+                    <div class="w-20 h-20 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tags text-4xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Affordable Pricing</h3>
+                    <p class="text-white/80">Competitive rates without compromising on quality or results.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 hover-lift">
+                    <div class="w-20 h-20 bg-pink-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-4xl text-pink-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Fast Delivery</h3>
+                    <p class="text-white/80">Quick turnaround times without sacrificing quality or attention to detail.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 hover-lift">
+                    <div class="w-20 h-20 bg-purple-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-palette text-4xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Creative Design</h3>
+                    <p class="text-white/80">Eye-catching visuals that capture attention and engage your audience.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 hover-lift">
+                    <div class="w-20 h-20 bg-cyan-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-4xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">24/7 Support</h3>
+                    <p class="text-white/80">Round-the-clock assistance for all your marketing needs and concerns.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 hover-lift">
+                    <div class="w-20 h-20 bg-blue-400/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-4xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Expert Team</h3>
+                    <p class="text-white/80">Skilled professionals with years of experience in digital marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/10 rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-step-forward text-primary mr-2"></i>
+                    <span class="text-primary font-medium">Our Process</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-dark mb-6">How It Works</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    A simple 5-step process to transform your business presence on Facebook
+                </p>
+            </div>
+
+            <div x-data="{ activeStep: 0 }" class="relative">
+                <!-- Desktop Steps -->
+                <div class="hidden lg:grid grid-cols-5 gap-4">
+                    <template x-for="(step, index) in [
+                        { icon: 'fa-comments', title: 'Consultation', desc: 'We discuss your goals and requirements' },
+                        { icon: 'fa-lightbulb', title: 'Strategy Planning', desc: 'Create customized marketing plan' },
+                        { icon: 'fa-paint-brush', title: 'Content & Ads', desc: 'Design and create compelling content' },
+                        { icon: 'fa-rocket', title: 'Campaign Launch', desc: 'Launch and monitor your campaigns' },
+                        { icon: 'fa-tachometer-alt', title: 'Optimization', desc: 'Continuously improve performance' }
+                    ]" :key="index">
+                        <div @click="activeStep = index"
+                             class="step-card cursor-pointer"
+                             :class="activeStep === index ? 'bg-primary text-white' : 'bg-gray-50 text-gray-700'">
+                            <div class="text-center p-6">
+                                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300"
+                                     :class="activeStep === index ? 'bg-white/20' : 'bg-primary/10'">
+                                    <i :class="'fas ' + step.icon" class="text-2xl"></i>
+                                </div>
+                                <p class="text-sm font-bold mb-2">Step <span x-text="index + 1"></span></p>
+                                <h4 class="text-lg font-bold mb-2" x-text="step.title"></h4>
+                                <p class="text-sm opacity-80" x-text="step.desc"></p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Mobile/Tablet Carousel -->
+                <div class="lg:hidden">
+                    <div class="relative overflow-hidden">
+                        <div class="flex transition-transform duration-500 ease-out"
+                             :style="'transform: translateX(-' + (activeStep * 100) + '%)'">
+                            <template x-for="(step, index) in [
+                                { icon: 'fa-comments', title: 'Consultation', desc: 'We discuss your goals and requirements' },
+                                { icon: 'fa-lightbulb', title: 'Strategy Planning', desc: 'Create customized marketing plan' },
+                                { icon: 'fa-paint-brush', title: 'Content & Ads', desc: 'Design and create compelling content' },
+                                { icon: 'fa-rocket', title: 'Campaign Launch', desc: 'Launch and monitor your campaigns' },
+                                { icon: 'fa-tachometer-alt', title: 'Optimization', desc: 'Continuously improve performance' }
+                            ]" :key="index">
+                                <div class="w-full flex-shrink-0 px-4">
+                                    <div class="bg-primary rounded-2xl p-8 text-white text-center">
+                                        <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                            <i :class="'fas ' + step.icon" class="text-4xl"></i>
+                                        </div>
+                                        <p class="text-sm font-bold mb-2">Step <span x-text="index + 1"></span></p>
+                                        <h4 class="text-2xl font-bold mb-4" x-text="step.title"></h4>
+                                        <p class="text-white/80" x-text="step.desc"></p>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Dots -->
+                    <div class="flex justify-center mt-8 space-x-2">
+                        <template x-for="(step, index) in [0, 1, 2, 3, 4]" :key="index">
+                            <button @click="activeStep = index"
+                                    class="w-3 h-3 rounded-full transition-all duration-300"
+                                    :class="activeStep === index ? 'bg-primary w-8' : 'bg-gray-300'">
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Results Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/10 rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-trophy text-primary mr-2"></i>
+                    <span class="text-primary font-medium">Our Success</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-dark mb-6">Real Results</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    See how we've helped businesses transform their online presence
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Result Cards -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Campaign Results" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-bold">
+                            +340% ROI
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">E-commerce Store</h3>
+                        <p class="text-gray-600 mb-4">Increased sales through targeted Facebook Ads campaigns</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-500">Before</span>
+                                <span class="font-bold text-gray-400 line-through">$2.5K</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-primary"></i>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-500">After</span>
+                                <span class="font-bold text-accent">$11K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Growth Analytics" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">
+                            +500K Reach
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">Local Restaurant</h3>
+                        <p class="text-gray-600 mb-4">Grew social media following with engaging content</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-500">Before</span>
+                                <span class="font-bold text-gray-400 line-through">2K</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-primary"></i>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-500">After</span>
+                                <span class="font-bold text-primary">50K+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1533750516457-6b1c0c4f4b0c?w=400&h=250&fit=crop" alt="Social Media Growth" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            +250% Engagement
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">Fashion Boutique</h3>
+                        <p class="text-gray-600 mb-4">Transformed brand presence with creative campaigns</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-500">Before</span>
+                                <span class="font-bold text-gray-400 line-through">5%</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-primary"></i>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-500">After</span>
+                                <span class="font-bold text-purple-600">17.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#contact" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-chart-line mr-2"></i>
+                    See More Results
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/10 rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-quote-left text-primary mr-2"></i>
+                    <span class="text-primary font-medium">Testimonials</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-dark mb-6">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Don't just take our word for it - hear from our satisfied clients
+                </p>
+            </div>
+
+            <div x-data="{
+                currentSlide: 0,
+                testimonials: [
+                    { name: 'Sarah Johnson', role: 'E-commerce Store Owner', text: 'FB Agency transformed our online presence! Our sales increased by 300% in just 3 months. Their team is professional and results-driven.', rating: 5 },
+                    { name: 'Michael Chen', role: 'Restaurant Chain Owner', text: 'The content and ad campaigns they created were phenomenal. Our social media following grew from 2K to 50K+ followers.', rating: 5 },
+                    { name: 'Emma Rodriguez', role: 'Fashion Boutique Owner', text: 'Best investment we made for our business. The ROI on their campaigns is incredible. Highly recommend!', rating: 5 },
+                    { name: 'David Kim', role: 'SaaS Startup Founder', text: 'Their Facebook Ads expertise helped us acquire hundreds of customers. The targeting and creative work is top-notch.', rating: 5 },
+                    { name: 'Lisa Thompson', role: 'Beauty Salon Owner', text: 'They helped us fill our appointment calendar consistently. Our monthly revenue increased by 150%!', rating: 5 },
+                    { name: 'James Wilson', role: 'Real Estate Agent', text: 'Professional, responsive, and effective. They helped me generate high-quality leads consistently through Facebook.', rating: 5 }
+                ],
+                autoplay: null,
+                startAutoplay() {
+                    this.autoplay = setInterval(() => {
+                        this.currentSlide = (this.currentSlide + 1) % this.testimonials.length;
+                    }, 5000);
+                },
+                stopAutoplay() {
+                    if (this.autoplay) {
+                        clearInterval(this.autoplay);
+                    }
+                }
+            }" x-init="startAutoplay()" @mouseenter="stopAutoplay()" @mouseleave="startAutoplay()">
+
+                <!-- Desktop Grid -->
+                <div class="hidden lg:block">
+                    <div class="grid grid-cols-3 gap-8">
+                        <template x-for="(testimonial, index) in testimonials.slice(0, 3)" :key="index">
+                            <div class="bg-gray-50 rounded-2xl p-8 hover-lift">
+                                <div class="flex items-center mb-4">
+                                    <template x-for="i in testimonial.rating" :key="i">
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                    </template>
+                                </div>
+                                <p class="text-gray-600 mb-6 leading-relaxed" x-text="testimonial.text"></p>
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                        <span x-text="testimonial.name.charAt(0)"></span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-dark" x-text="testimonial.name"></p>
+                                        <p class="text-sm text-gray-500" x-text="testimonial.role"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-8 mt-8">
+                        <template x-for="(testimonial, index) in testimonials.slice(3, 6)" :key="index">
+                            <div class="bg-gray-50 rounded-2xl p-8 hover-lift">
+                                <div class="flex items-center mb-4">
+                                    <template x-for="i in testimonial.rating" :key="i">
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                    </template>
+                                </div>
+                                <p class="text-gray-600 mb-6 leading-relaxed" x-text="testimonial.text"></p>
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                        <span x-text="testimonial.name.charAt(0)"></span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-dark" x-text="testimonial.name"></p>
+                                        <p class="text-sm text-gray-500" x-text="testimonial.role"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Mobile/Tablet Carousel -->
+                <div class="lg:hidden">
+                    <div class="relative overflow-hidden">
+                        <div class="flex transition-transform duration-500 ease-out"
+                             :style="'transform: translateX(-' + (currentSlide * 100) + '%)'">
+                            <template x-for="(testimonial, index) in testimonials" :key="index">
+                                <div class="w-full flex-shrink-0 px-4">
+                                    <div class="bg-gray-50 rounded-2xl p-8">
+                                        <div class="flex items-center mb-4">
+                                            <template x-for="i in testimonial.rating" :key="i">
+                                                <i class="fas fa-star text-yellow-400"></i>
+                                            </template>
+                                        </div>
+                                        <p class="text-gray-600 mb-6 leading-relaxed" x-text="testimonial.text"></p>
+                                        <div class="flex items-center">
+                                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                                <span x-text="testimonial.name.charAt(0)"></span>
+                                            </div>
+                                            <div>
+                                                <p class="font-bold text-dark" x-text="testimonial.name"></p>
+                                                <p class="text-sm text-gray-500" x-text="testimonial.role"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Dots -->
+                    <div class="flex justify-center mt-8 space-x-2">
+                        <template x-for="(testimonial, index) in testimonials" :key="index">
+                            <button @click="currentSlide = index"
+                                    class="w-3 h-3 rounded-full transition-all duration-300"
+                                    :class="currentSlide === index ? 'bg-primary w-8' : 'bg-gray-300'">
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/10 rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-tags text-primary mr-2"></i>
+                    <span class="text-primary font-medium">Pricing Plans</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-dark mb-6">Choose Your Plan</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Flexible packages designed to fit your budget and goals
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-start">
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-primary/20 transition-all duration-300 hover-lift">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-2">Basic</h3>
+                        <p class="text-gray-600 mb-6">Perfect for startups</p>
+                        <div class="flex items-baseline justify-center">
+                            <span class="text-4xl font-extrabold text-dark">$199</span>
+                            <span class="text-gray-500 ml-2">/month</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Facebook Page Setup</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">5 Posts Per Month</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Basic Ad Boosting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Monthly Report</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times mr-3"></i>
+                            <span>Video Content</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times mr-3"></i>
+                            <span>Dedicated Manager</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="block text-center bg-gray-100 hover:bg-gray-200 text-dark px-6 py-4 rounded-full font-semibold transition-all duration-300">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Standard Plan (Highlighted) -->
+                <div class="bg-white rounded-2xl p-8 border-4 border-primary relative transform lg:scale-105 shadow-2xl">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-accent text-white px-6 py-2 rounded-full text-sm font-bold">Most Popular</span>
+                    </div>
+
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bolt text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-2">Standard</h3>
+                        <p class="text-gray-600 mb-6">Best value for growth</p>
+                        <div class="flex items-baseline justify-center">
+                            <span class="text-4xl font-extrabold text-primary">$499</span>
+                            <span class="text-gray-500 ml-2">/month</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Full Page Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">15 Posts Per Month</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Ad Campaign Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Reels & Video Editing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Weekly Reports</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times mr-3"></i>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="block text-center bg-primary hover:bg-secondary text-white px-6 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-primary/20 transition-all duration-300 hover-lift">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-crown text-3xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark mb-2">Premium</h3>
+                        <p class="text-gray-600 mb-6">For enterprise needs</p>
+                        <div class="flex items-baseline justify-center">
+                            <span class="text-4xl font-extrabold text-dark">$999</span>
+                            <span class="text-gray-500 ml-2">/month</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Full Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Daily Content Creation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Advanced Ad Campaigns</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Reels & Video Editing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">Dedicated Manager</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span class="text-gray-600">24/7 Priority Support</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="block text-center bg-gray-800 hover:bg-gray-900 text-white px-6 py-4 rounded-full font-semibold transition-all duration-300">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-gray-600">Need a custom plan? <a href="#contact" class="text-primary font-semibold hover:underline">Contact us</a> for a tailored solution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="py-20 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                <i class="fab fa-whatsapp text-green-400 mr-2"></i>
+                <span class="text-white font-medium">Start Your Journey Today</span>
+            </div>
+
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6">
+                Ready to Grow Your Business?
+            </h2>
+
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                Let's discuss how we can help you achieve your marketing goals.
+                Get a free consultation and see how we can transform your online presence.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 shadow-2xl hover:shadow-xl hover:scale-105">
+                    <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                    Contact on WhatsApp
+                </a>
+                <a href="mailto:hello@fbagency.com" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 border-2 border-white/30">
+                    <i class="fas fa-envelope mr-3"></i>
+                    Email Us
+                </a>
+            </div>
+
+            <div class="mt-12 flex items-center justify-center space-x-8 text-white/80">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                    <span>Free Consultation</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                    <span>No Commitment</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                    <span>Fast Response</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fab fa-facebook-f text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">FB Agency</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Your trusted partner for Facebook marketing and digital growth solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Results</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook Ads</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Page Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Content Creation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Video Production</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Analytics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Business Street, Suite 100, City, Country</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-primary mr-3"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span class="text-gray-400">hello@fbagency.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp text-primary mr-3"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; 2024 FB Agency. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button x-data="{ visible: false }"
+            @scroll.window="visible = (window.pageYOffset > 500)"
+            x-show="visible"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-4"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            class="fixed bottom-8 right-8 w-12 h-12 bg-primary hover:bg-secondary text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+<script>
+/**
+ * Iframe 元素高亮注入脚本
+ * 需要在目标网站中引入此脚本来支持跨域 iframe 高亮功能
+ *
+ * 使用方法：
+ * 1. 将此脚本添加到目标网站的 HTML 中
+ * 2. 或通过浏览器扩展、用户脚本等方式注入
+ */
+
+(function () {
+  "use strict";
+
+  // 检查是否在 iframe 中
+  if (window.self === window.top) {
+    return; // 不在 iframe 中，不执行
+  }
+
+  // 检查是否已经初始化过
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe 高亮脚本已加载");
+
+  // 创建高亮覆盖层
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // 创建悬停高亮框（虚线边框）
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // 创建选中节点的常驻高亮框（实线边框）
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // 创建悬停标签显示
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // 创建选中节点标签
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // 存储当前选中的元素
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // 更新选中元素的高亮显示
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // 更新选中高亮框位置
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // 更新选中标签位置和内容
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // 计算标签位置，确保不超出视窗
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // 如果标签会超出顶部，显示在元素下方
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // 如果标签会超出右侧，向左调整
+    var labelWidth = selectedLabel.offsetWidth || 100; // 预估宽度
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // 优先检查唯一ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID唯一，无需继续向上
+      }
+
+      // 生成类名选择器（取第一个有效类名）
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // 生成位置索引（nth-child）
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // 处理根元素
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // 获取元素文本内容
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // 获取元素属性信息
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // 鼠标悬停事件处理
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // 避免高亮 html 和 body 元素
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // 如果是已选中的元素，不显示悬停高亮
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // 更新悬停高亮框位置
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // 更新标签位置和内容
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // 计算标签位置，确保不超出视窗
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // 如果标签会超出顶部，显示在元素下方
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // 如果标签会超出右侧，向左调整
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // 发送消息到父窗口
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 鼠标离开事件处理
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // 如果鼠标移动到高亮相关元素上，不隐藏高亮
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 点击事件处理
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // 避免处理 html 和 body 元素
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // 检查是否是交互元素，这些元素需要保留默认行为
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // 如果高亮功能启用，对于非交互元素阻止默认行为和事件传播
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // 立即更新选中高亮
+    updateSelectedHighlight(target);
+
+    // 隐藏悬停高亮，因为现在是选中状态
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 监听来自父窗口的消息
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // 启用高亮功能
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // 禁用高亮功能
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // 保持事件监听器，但通过 highlightEnabled 变量控制行为
+    // 这样可以保留选中状态的显示
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // 不隐藏 selectedBox 和 selectedLabel，保留选中状态
+  }
+
+  // 完全禁用高亮功能（移除所有监听器）
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // 添加事件监听
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // 暴露全局函数供外部调用
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // 通过消息发送开关控制
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // 通知父窗口脚本已加载
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("无法发送就绪消息到父窗口:", error);
+  }
+
+  // 清理函数
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+
+<script>
+/**
+ * Iframe 元素高亮注入脚本
+ * 需要在目标网站中引入此脚本来支持跨域 iframe 高亮功能
+ *
+ * 使用方法：
+ * 1. 将此脚本添加到目标网站的 HTML 中
+ * 2. 或通过浏览器扩展、用户脚本等方式注入
+ */
+
+(function () {
+  "use strict";
+
+  // 检查是否在 iframe 中
+  if (window.self === window.top) {
+    return; // 不在 iframe 中，不执行
+  }
+
+  // 检查是否已经初始化过
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe 高亮脚本已加载");
+
+  // 创建高亮覆盖层
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // 创建悬停高亮框（虚线边框）
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // 创建选中节点的常驻高亮框（实线边框）
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // 创建悬停标签显示
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // 创建选中节点标签
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // 存储当前选中的元素
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // 更新选中元素的高亮显示
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // 更新选中高亮框位置
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // 更新选中标签位置和内容
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // 计算标签位置，确保不超出视窗
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // 如果标签会超出顶部，显示在元素下方
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // 如果标签会超出右侧，向左调整
+    var labelWidth = selectedLabel.offsetWidth || 100; // 预估宽度
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // 优先检查唯一ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID唯一，无需继续向上
+      }
+
+      // 生成类名选择器（取第一个有效类名）
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // 生成位置索引（nth-child）
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // 处理根元素
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // 获取元素文本内容
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // 获取元素属性信息
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // 鼠标悬停事件处理
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // 避免高亮 html 和 body 元素
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // 如果是已选中的元素，不显示悬停高亮
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // 更新悬停高亮框位置
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // 更新标签位置和内容
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // 计算标签位置，确保不超出视窗
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // 如果标签会超出顶部，显示在元素下方
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // 如果标签会超出右侧，向左调整
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // 发送消息到父窗口
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 鼠标离开事件处理
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // 如果鼠标移动到高亮相关元素上，不隐藏高亮
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 点击事件处理
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // 避免处理 html 和 body 元素
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // 检查是否是交互元素，这些元素需要保留默认行为
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // 如果高亮功能启用，对于非交互元素阻止默认行为和事件传播
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // 立即更新选中高亮
+    updateSelectedHighlight(target);
+
+    // 隐藏悬停高亮，因为现在是选中状态
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("无法发送消息到父窗口:", error);
+    }
+  }
+
+  // 监听来自父窗口的消息
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // 启用高亮功能
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // 禁用高亮功能
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // 保持事件监听器，但通过 highlightEnabled 变量控制行为
+    // 这样可以保留选中状态的显示
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // 不隐藏 selectedBox 和 selectedLabel，保留选中状态
+  }
+
+  // 完全禁用高亮功能（移除所有监听器）
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // 添加事件监听
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // 暴露全局函数供外部调用
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // 通过消息发送开关控制
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // 通知父窗口脚本已加载
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("无法发送就绪消息到父窗口:", error);
+  }
+
+  // 清理函数
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+</body>
+</html>
